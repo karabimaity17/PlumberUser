@@ -23,8 +23,9 @@
         android:text="Plumber Service"
         android:gravity="center"
         android:layout_marginBottom="@dimen/_30sdp"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="28sp"
+        android:fontFamily="@font/fonts_bold"
         android:textStyle="bold"/>
 
 

@@ -33,8 +33,8 @@ public class WelcomeActivity extends AppCompatActivity {
     TextView txt;
     PrefManager prefManager;
     int[] Images = {R.drawable.img2, R.drawable.img4, R.drawable.img3, R.drawable.img5};
-    String[] Text1 = {"Plumber at your chosen location", "Book or Schedule at any time","Track your Plumber",
-            "Available 24×7 for 365 days"};
+    String[] Text1 = {"Plumber at your chosen location", "Book or Schedule at any time",
+            "Available 24×7 for 365 days","Track your Plumber"};
     String[] Text2 = {"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document",
             "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document",
             "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document",
