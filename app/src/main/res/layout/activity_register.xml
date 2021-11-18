@@ -89,17 +89,18 @@
                         android:layout_height="wrap_content"
                         android:text="Register"
                         android:textColor="@color/colorDarkGrey"
-                        android:textSize="22sp"
+                        android:textSize="@dimen/_16sdp"
                         android:textStyle="bold"
+                        android:id="@+id/txt_register"
                         android:fontFamily="@font/fonts_regular"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Plumber Service"
+                        android:id="@+id/text_plumber"
                         android:fontFamily="@font/fonts_bold"
-                        android:textSize="22sp"
+                        android:textSize="@dimen/_16sdp"
                         android:textColor="@color/colorAccent"
-                        android:textStyle="bold"
                         android:layout_alignParentRight="true"/>
                 </RelativeLayout>
                 <androidx.cardview.widget.CardView
@@ -113,7 +114,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
+                        android:textSize="15sp"
                         android:hint="Full Name"
+                        android:fontFamily="@font/fonts_medium"
                         android:textColor="#000"
                         android:padding="@dimen/_10sdp"
                         android:background="@color/colorWhite"
@@ -135,6 +138,9 @@
                         android:text=""
                         android:hint="Email ID"
                         android:textColor="#000"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/fonts_medium"
+                        android:inputType="textEmailAddress"
                         android:padding="@dimen/_10sdp"
                         android:background="@color/colorWhite"
                         android:textStyle="normal"
@@ -146,15 +152,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_10sdp"
-                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     app:cardCornerRadius="@dimen/_20sdp">
                     <EditText
                         android:id="@+id/edt_pass"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
+                        android:inputType="textPassword"
                         android:hint="Password"
+                        android:fontFamily="@font/fonts_medium"
                         android:textColor="#000"
+                        android:textSize="15sp"
                         android:padding="@dimen/_10sdp"
                         android:background="@color/colorWhite"
                         android:textStyle="normal"
@@ -166,8 +175,9 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_40sdp"
                     android:layout_margin="@dimen/_15sdp"
+                    android:id="@+id/register_card"
                     app:cardCornerRadius="@dimen/_25sdp"
                     app:cardBackgroundColor="@color/colorPrimary">
                     <TextView
@@ -176,11 +186,10 @@
                         android:layout_height="wrap_content"
                         android:text="Register"
                         android:textColor="@color/colorWhite"
-                        android:padding="@dimen/_10sdp"
+                       android:layout_gravity="center_vertical"
                         android:gravity="center"
-                        android:textStyle="bold"
                         android:fontFamily="@font/fonts_bold"
-                        android:textSize="22sp"/>
+                        android:textSize="@dimen/_17sdp"/>
                 </androidx.cardview.widget.CardView>
                 <View
                     android:layout_width="match_parent"
@@ -191,8 +200,8 @@
                     android:id="@+id/login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/medium"
                     android:lineSpacingExtra="4sp"
+                    android:fontFamily="@font/fonts_semibold"
                     android:text="Already have an account ? Login Here"
                     android:textColor="@color/colorDarkGrey"
                     android:layout_marginVertical="@dimen/_10sdp"
