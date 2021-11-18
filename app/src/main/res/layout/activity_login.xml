@@ -95,7 +95,7 @@
                         android:layout_height="wrap_content"
                         android:text="Plumber Service"
                         android:fontFamily="@font/fonts_bold"
-                        android:textSize="22sp"
+                        android:textSize="25sp"
                         android:textColor="@color/colorAccent"
                         android:textStyle="bold"
                         android:layout_alignParentRight="true"/>
