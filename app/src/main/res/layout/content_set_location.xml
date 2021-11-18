@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ 
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_60sdp"
+
+        android:layout_marginTop="@dimen/_90sdp"
+        android:layout_marginLeft="@dimen/_15sdp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="Hello,nice to meet you!"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:typeface="sans"
+        android:textColor="#000"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_25sdp"
+        android:text="Set your location to shop products at reasonable price"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:typeface="sans"
+        />
+    <Button
+        android:id="@+id/btn_current_locaton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_margin="@dimen/_20sdp"
+        android:textColor="#fff"
+        android:text="Use my current location"
+        android:backgroundTint="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_25sdp"
+        android:text="We will access your location if you use this button"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:typeface="sans"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="or,set your location manually"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:typeface="sans"
+        android:textColor="#000"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_skip"/>
+
+</LinearLayout>
