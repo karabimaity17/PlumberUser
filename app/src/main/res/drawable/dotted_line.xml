@@ -7,7 +7,7 @@
         <shape>
             <solid android:color="@android:color/transparent"/>
             <stroke
-                android:width="@dimen/_3sdp"
+                android:width="@dimen/_1sdp"
                 android:color="@color/colorGrey"
                 android:dashGap="@dimen/_8sdp"
                 android:dashWidth="@dimen/_8sdp"/>
