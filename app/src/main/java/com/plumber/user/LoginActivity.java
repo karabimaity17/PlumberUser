@@ -137,11 +137,10 @@ public class LoginActivity extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Bundle bundle=new Bundle();
-//                bundle.putString("page_type","login");
-//                Intent i = new Intent(LoginActivity.this, EduMe.class).putExtras(bundle);
-//                startActivity(i);
-//                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+                Intent i = new Intent(LoginActivity.this, SetLocation.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
             }
         });

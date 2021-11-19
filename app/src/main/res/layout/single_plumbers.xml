@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_80sdp"
+    android:layout_height="@dimen/_80sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/_5sdp"
+    android:id="@+id/card_view"
+    app:cardBackgroundColor="@color/colorGrey"
+    android:layout_margin="@dimen/_2sdp">
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/plumber_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/plum_img1" />
+        <TextView
+            android:id="@+id/num_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5.0"
+            android:fontFamily="@font/fonts_semibold"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"
+            android:textSize="@dimen/_10sdp"
+            android:background="@drawable/box_white"
+            android:layout_margin="@dimen/_3sdp"
+            android:drawablePadding="@dimen/_2sdp"
+            android:drawableTint="@color/colorAccent"
+            android:drawableRight="@drawable/star"
+            android:paddingHorizontal="@dimen/_2sdp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

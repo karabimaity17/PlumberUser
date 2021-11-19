@@ -9,15 +9,43 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:elevation="0dp"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorWhite"
-            android:elevation="0dp"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:background="#F8CFD7"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="@dimen/_minus10sdp"
+            app:popupTheme="@style/AppTheme.AppBarOverlay">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="62 Southlands Road"
+                android:layout_gravity="start"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:padding="@dimen/_3sdp"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/fonts_regular"
+                android:gravity="center_vertical"
+                android:drawableStart="@drawable/location"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:background="@drawable/dotted_line"
+                android:backgroundTint="@color/colorPrimaryDark"/>
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 

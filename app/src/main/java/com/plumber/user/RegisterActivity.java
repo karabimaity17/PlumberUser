@@ -21,7 +21,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextView login,txt_owner,landlord,agent,text_register,text_plumber;
     String type="Owner";
     Animation fadeAnimation,left_to_right,right_to_left,bottom_to_top;
-    CardView register_curd;
+    CardView register_card;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         txt_owner = findViewById(R.id.txt_owner);
         landlord = findViewById(R.id.landlord);
         agent = findViewById(R.id.agent);
-        register_curd = findViewById(R.id.register_card);
+        register_card = findViewById(R.id.register_card);
         text_register = findViewById(R.id.txt_register);
         text_plumber = findViewById(R.id.text_plumber);
 
@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
         left_to_right= AnimationUtils.loadAnimation(getApplicationContext(), R.anim.left_right);
         right_to_left= AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_left);
         bottom_to_top= AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_in_bottom);
-        register_curd.setAnimation(fadeAnimation);
+        register_card.setAnimation(fadeAnimation);
         text_register.setAnimation(left_to_right);
         text_plumber.setAnimation(right_to_left);
         login.setAnimation(bottom_to_top);
@@ -60,6 +60,17 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(i);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
+
+            }
+        });
+        //working with register button
+        register_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(RegisterActivity.this, SetLocation.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                //finish();
 
             }
         });
