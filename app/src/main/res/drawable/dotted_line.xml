@@ -2,14 +2,14 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:right="-8dp"
-        android:bottom="-8dp"
+        android:top="-8dp"
         android:left="-8dp">
         <shape>
-            <solid android:color="@android:color/transparent"/>
+            <solid android:color="@color/colorWhite"/>
             <stroke
-                android:width="@dimen/_1sdp"
-                android:color="@color/colorGrey"
-                android:dashGap="@dimen/_8sdp"
+                android:width="@dimen/_2sdp"
+                android:color="@color/colorBlack"
+                android:dashGap="@dimen/_5sdp"
                 android:dashWidth="@dimen/_8sdp"/>
         </shape>
     </item>
