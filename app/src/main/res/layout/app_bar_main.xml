@@ -16,7 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorWhite"
+            android:background="#F8CFD7"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
             app:contentInsetStartWithNavigation="@dimen/_minus10sdp"
@@ -33,16 +33,16 @@
                 android:layout_gravity="start"
                 android:maxLines="1"
                 android:ellipsize="end"
-                android:textColor="@color/colorBlack"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:padding="@dimen/_3sdp"
                 android:textSize="@dimen/_12sdp"
                 android:fontFamily="@font/fonts_regular"
                 android:gravity="center_vertical"
                 android:drawableStart="@drawable/location"
-                android:drawableTint="@color/colorDarkGrey"
+                android:drawableTint="@color/colorPrimaryDark"
                 android:background="@drawable/dotted_line"
-                />
+                android:backgroundTint="@color/colorPrimaryDark"/>
             </FrameLayout>
 
         </androidx.appcompat.widget.Toolbar>
