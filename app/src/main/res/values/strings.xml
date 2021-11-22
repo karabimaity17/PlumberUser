@@ -21,4 +21,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_set_location">SetLocation</string>
     <string name="title_activity_search_location">SearchLocation</string>
+    <string name="title_activity_emergency_boocking">EmergencyBoocking</string>
+    <string name="title_activity_schedule_booking">ScheduleBooking</string>
 </resources>
