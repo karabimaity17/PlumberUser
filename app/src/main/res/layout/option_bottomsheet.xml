@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="@dimen/_40sdp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:id="@+id/option_bottomsheet"
+    app:cardCornerRadius="@dimen/_10sdp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+
+
+
+                <TextView
+                    android:id="@+id/nameToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:gravity="center"
+                    android:background="@drawable/box_grey"
+                    android:text="Choose any Option"
+                  android:fontFamily="@font/fonts_semibold"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/colorBlack" />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_marginVertical="@dimen/_10sdp"
+               android:paddingBottom="@dimen/_10sdp">
+               <Button
+                   android:id="@+id/txt_owner"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:textColor="@color/colorWhite"
+                   android:text="Emergency \nBooking"
+                   android:background="@drawable/box"
+                   android:backgroundTint="@color/colorAccent"
+                   android:textSize="@dimen/_12sdp"
+                   android:textAllCaps="false"
+                   android:fontFamily="@font/fonts_semibold"
+                   android:padding="@dimen/_8sdp"
+                   android:gravity="center"
+                   android:lines="2"
+                   android:layout_margin="@dimen/_8sdp"
+                   />
+               <Button
+                   android:id="@+id/landlord"
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"
+                   android:background="@drawable/box"
+                   android:textColor="@color/colorDarkGrey"
+                   android:text="Schedule \nBooking"
+                   android:textSize="@dimen/_12sdp"
+                   android:textAllCaps="false"
+                   android:gravity="center"
+                   android:fontFamily="@font/fonts_semibold"
+                   android:padding="@dimen/_8sdp"
+
+                   android:lines="2"
+                   android:layout_margin="@dimen/_8sdp"/>
+           </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

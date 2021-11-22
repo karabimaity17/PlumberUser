@@ -31,6 +31,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.navigation.NavigationView;
 import com.infideap.drawerbehavior.AdvanceDrawerLayout;
 import com.plumber.user.Model.PlumberModel;
@@ -65,6 +66,8 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
 //    LocationRequest mLocationRequest;
 
 
+    CardView option_bottomsheet;
+    BottomSheetBehavior sheetBehavior;
     RecyclerView recycler_category,recycler_plumbers;
     ServiceAdapter serviceAdapter;
     List<ServiceModel> serviceModels = new ArrayList<>();
@@ -88,7 +91,8 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
         recycler_category = findViewById(R.id.recycler_view);
         txt_location = findViewById(R.id.txt_location);
         recycler_plumbers = findViewById(R.id.recycler_plumbers);
-
+        option_bottomsheet = findViewById(R.id.option_bottomsheet);
+        sheetBehavior = BottomSheetBehavior.from(option_bottomsheet);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 //        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -178,6 +182,13 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
             holder.service_name.setText(serviceModelList.get(position).getName());
             holder.service_image.setImageResource(serviceModelList.get(position).getImage());
 
+            holder.rel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    toggleBottomSheet();
+                }
+            });
+
         }
 
         @Override
@@ -205,7 +216,11 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
 
 
     }
+    private void toggleBottomSheet() {
+        sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
 
+
+    }
     public class PlumberAdapter extends RecyclerView.Adapter<PlumberAdapter.ViewHolder> {
 
         Context context;
