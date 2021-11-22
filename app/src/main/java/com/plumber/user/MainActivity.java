@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -36,6 +38,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.infideap.drawerbehavior.AdvanceDrawerLayout;
 import com.plumber.user.Model.PlumberModel;
 import com.plumber.user.Model.ServiceModel;
+import com.ramotion.foldingcell.FoldingCell;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -159,7 +162,7 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
 //        NavigationUI.setupWithNavController(navigationView, navController);
     }
     public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHolder> {
-
+        int selected_position = 0;
         Context context;
         List<ServiceModel> serviceModelList;
         public int[] mColors = {R.drawable.gradiant3,R.drawable.gradiant1,R.drawable.gradiant2,R.drawable.gradiant4,R.drawable.gradiant5};
@@ -181,13 +184,27 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
             holder.rel.setBackground(getDrawable(mColors[position]));
             holder.service_name.setText(serviceModelList.get(position).getName());
             holder.service_image.setImageResource(serviceModelList.get(position).getImage());
+            holder.bind(serviceModelList.get(position));
 
-            holder.rel.setOnClickListener(new View.OnClickListener() {
+            holder.txt_emergency.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    toggleBottomSheet();
+                    startActivity(new Intent(MainActivity.this, EmergencyBooking.class));
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
             });
+
+
+            holder.txt_schedule.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    startActivity(new Intent(MainActivity.this, ScheduleBooking.class));
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                }
+            });
+
+
 
         }
 
@@ -197,10 +214,12 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            TextView service_name;
-            ImageView service_image;
+            TextView service_name,txt_emergency,txt_schedule;
+            ImageView service_image,img;
+            LinearLayout lin;
             RelativeLayout rel;
             CardView card_view;
+            FoldingCell fc;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
 
@@ -209,9 +228,47 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
                 service_image=itemView.findViewById(R.id.service_image);
 
                 rel=itemView.findViewById(R.id.rel);
+                lin=itemView.findViewById(R.id.lin);
+                img=itemView.findViewById(R.id.img);
+                txt_emergency=itemView.findViewById(R.id.txt_emergency);
+                txt_schedule=itemView.findViewById(R.id.txt_schedule);
 
             }
+            void bind(final ServiceModel model) {
+                RotateAnimation anim = new RotateAnimation(90, 0);
+                RotateAnimation anim2 = new RotateAnimation(0, 90);
+                anim.setFillAfter(true);
+                anim2.setFillAfter(true);
+                if (selected_position == -1 || selected_position == 0) {
+                    lin.setVisibility(View.GONE);
+                    img.setImageResource(R.drawable.right_arrow2);
+                } else {
+                    if (selected_position == getAdapterPosition() ) {
+                        lin.setVisibility(View.VISIBLE);
+                        img.setImageResource(R.drawable.arrow_down);
 
+                    } else {
+                        lin.setVisibility(View.GONE);
+                        img.setImageResource(R.drawable.right_arrow2);
+                    }
+                }
+
+                rel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (lin.getVisibility()==View.VISIBLE){
+
+                            lin.setVisibility(View.GONE);
+                            img.setImageResource(R.drawable.right_arrow2);
+                        }else {
+
+
+                            lin.setVisibility(View.VISIBLE);
+                            img.setImageResource(R.drawable.arrow_down);
+                        }
+                    }
+                });
+            }
         }
 
 
