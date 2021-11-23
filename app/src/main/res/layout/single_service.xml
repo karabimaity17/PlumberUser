@@ -12,12 +12,12 @@
         android:orientation="vertical">
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_140sdp"
+            android:layout_height="@dimen/_135sdp"
             app:cardCornerRadius="@dimen/_10sdp">
             <RelativeLayout
                 android:id="@+id/rel"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_140sdp"
+                android:layout_height="@dimen/_135sdp"
                 android:visibility="visible"
                 android:background="@drawable/gradiant1">
 
@@ -25,83 +25,95 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_alignParentRight="true"
-                    android:gravity="end"
+                    android:gravity="start"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginRight="@dimen/_10sdp">
+                    android:layout_marginHorizontal="@dimen/_10sdp">
                     <TextView
                         android:id="@+id/service_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Plumbing"
-                        android:textSize="@dimen/_13sdp"
-                        android:textColor="@color/colorWhite"
+                        android:maxWidth="@dimen/_100sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/colorBlack"
                         android:fontFamily="@font/fonts_semibold"/>
-                    <ImageView
-                        android:id="@+id/img"
-                        android:layout_width="@dimen/_15sdp"
-                        android:layout_height="@dimen/_15sdp"
-                        android:src="@drawable/right_arrow2"
-                        android:elevation="@dimen/_5sdp"
-                        android:layout_marginVertical="@dimen/_2sdp"/>
+
+                    <Button
+                        android:id="@+id/btnBook"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="wrap_content"
+                        android:text="Book"
+                        android:backgroundTint="#5414C5"
+                        android:textColor="@color/colorWhite"
+                        android:drawableRight="@drawable/right_arrow2"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"/>
+
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_80sdp"
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="@dimen/_100sdp"
                     android:src="@drawable/half_circle"
                     android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
                     android:layout_marginHorizontal="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_minus12sdp"/>
                 <ImageView
                     android:id="@+id/service_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_100sdp"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
                     android:src="@drawable/plumber"
                     android:layout_alignParentBottom="true"/>
+                <LinearLayout
+                    android:id="@+id/lin"
+                    android:layout_width="@dimen/_185sdp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/gradiant1"
+
+                    >
+                    <Button
+                        android:id="@+id/txt_emergency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:text="Emergency \nBooking"
+                        android:background="@drawable/box"
+                        android:backgroundTint="@color/colorDarkGrey"
+                        android:textSize="@dimen/_12sdp"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/fonts_semibold"
+                        android:padding="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:layout_margin="@dimen/_8sdp"
+                        />
+                    <Button
+                        android:id="@+id/txt_schedule"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/box"
+                        android:textColor="@color/colorDarkGrey"
+                        android:text="Schedule\nBooking"
+                        android:textSize="@dimen/_12sdp"
+                        android:textAllCaps="false"
+                        android:gravity="center"
+                        android:fontFamily="@font/fonts_semibold"
+                        android:padding="@dimen/_5sdp"
+
+                        android:lines="2"
+                        android:layout_margin="@dimen/_8sdp"/>
+                </LinearLayout>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
 
-        <LinearLayout
-            android:id="@+id/lin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:background="@color/colorWhite">
-            <Button
-                android:id="@+id/txt_emergency"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorWhite"
-                android:text="Emergency \nBooking"
-                android:background="@drawable/box"
-                android:backgroundTint="@color/colorAccent"
-                android:textSize="@dimen/_12sdp"
-                android:textAllCaps="false"
-                android:fontFamily="@font/fonts_semibold"
-                android:padding="@dimen/_8sdp"
-                android:gravity="center"
-                android:lines="2"
-                android:layout_margin="@dimen/_8sdp"
-                />
-            <Button
-                android:id="@+id/txt_schedule"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/box"
-                android:textColor="@color/colorDarkGrey"
-                android:text="Schedule\nBooking"
-                android:textSize="@dimen/_12sdp"
-                android:textAllCaps="false"
-                android:gravity="center"
-                android:fontFamily="@font/fonts_semibold"
-                android:padding="@dimen/_8sdp"
 
-                android:lines="2"
-                android:layout_margin="@dimen/_8sdp"/>
-        </LinearLayout>
     </LinearLayout>
 
 

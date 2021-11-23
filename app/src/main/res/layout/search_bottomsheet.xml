@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="@dimen/_50sdp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:id="@+id/search_bottomsheet"
+    app:cardCornerRadius="@dimen/_10sdp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+
+
+
+                <TextView
+                    android:id="@+id/nameToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:gravity="center"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Searching for Plumbers...."
+                  android:fontFamily="@font/fonts_semibold"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/colorBlack" />
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:src="@drawable/searching"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

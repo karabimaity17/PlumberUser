@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
 
         //recycler view set
         recycler_category.setHasFixedSize(true);
-        recycler_category.setLayoutManager(new GridLayoutManager(MainActivity.this,2));
+        recycler_category.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
         recycler_plumbers.setHasFixedSize(true);
         recycler_plumbers.setLayoutManager(new LinearLayoutManager(MainActivity.this,RecyclerView.HORIZONTAL,false));
@@ -165,7 +166,7 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
         int selected_position = 0;
         Context context;
         List<ServiceModel> serviceModelList;
-        public int[] mColors = {R.drawable.gradiant3,R.drawable.gradiant1,R.drawable.gradiant2,R.drawable.gradiant4,R.drawable.gradiant5};
+        public int[] mColors = {R.drawable.gradiant1,R.drawable.gradiant3,R.drawable.gradiant2,R.drawable.gradiant4,R.drawable.gradiant5};
         public ServiceAdapter(Context context, List<ServiceModel> serviceModelList) {
             this.context = context;
             this.serviceModelList = serviceModelList;
@@ -182,6 +183,7 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
         @Override
         public void onBindViewHolder(@NonNull final ServiceAdapter.ViewHolder holder, final int position) {
             holder.rel.setBackground(getDrawable(mColors[position]));
+            holder.lin.setBackground(getDrawable(mColors[position]));
             holder.service_name.setText(serviceModelList.get(position).getName());
             holder.service_image.setImageResource(serviceModelList.get(position).getImage());
             holder.bind(serviceModelList.get(position));
@@ -215,11 +217,12 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             TextView service_name,txt_emergency,txt_schedule;
-            ImageView service_image,img;
+            ImageView service_image;
             LinearLayout lin;
             RelativeLayout rel;
             CardView card_view;
-            FoldingCell fc;
+            Button btnBook;
+
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
 
@@ -229,7 +232,7 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
 
                 rel=itemView.findViewById(R.id.rel);
                 lin=itemView.findViewById(R.id.lin);
-                img=itemView.findViewById(R.id.img);
+                btnBook=itemView.findViewById(R.id.btnBook);
                 txt_emergency=itemView.findViewById(R.id.txt_emergency);
                 txt_schedule=itemView.findViewById(R.id.txt_schedule);
 
@@ -241,30 +244,28 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
                 anim2.setFillAfter(true);
                 if (selected_position == -1 || selected_position == 0) {
                     lin.setVisibility(View.GONE);
-                    img.setImageResource(R.drawable.right_arrow2);
+                    lin.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.left_right2));
                 } else {
                     if (selected_position == getAdapterPosition() ) {
                         lin.setVisibility(View.VISIBLE);
-                        img.setImageResource(R.drawable.arrow_down);
+                        lin.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_left));
 
                     } else {
                         lin.setVisibility(View.GONE);
-                        img.setImageResource(R.drawable.right_arrow2);
+                        lin.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.left_right2));
                     }
                 }
 
-                rel.setOnClickListener(new View.OnClickListener() {
+                btnBook.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (lin.getVisibility()==View.VISIBLE){
 
                             lin.setVisibility(View.GONE);
-                            img.setImageResource(R.drawable.right_arrow2);
+                            lin.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.left_right2));
                         }else {
-
-
                             lin.setVisibility(View.VISIBLE);
-                            img.setImageResource(R.drawable.arrow_down);
+                            lin.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_left));
                         }
                     }
                 });
