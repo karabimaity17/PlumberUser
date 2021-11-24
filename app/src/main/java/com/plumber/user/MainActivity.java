@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
 //    LocationRequest mLocationRequest;
 
 
-    CardView option_bottomsheet;
-    BottomSheetBehavior sheetBehavior;
+ //   CardView option_bottomsheet;
+  //  BottomSheetBehavior sheetBehavior;
     RecyclerView recycler_category,recycler_plumbers;
     ServiceAdapter serviceAdapter;
     List<ServiceModel> serviceModels = new ArrayList<>();
@@ -95,8 +95,8 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
         recycler_category = findViewById(R.id.recycler_view);
         txt_location = findViewById(R.id.txt_location);
         recycler_plumbers = findViewById(R.id.recycler_plumbers);
-        option_bottomsheet = findViewById(R.id.option_bottomsheet);
-        sheetBehavior = BottomSheetBehavior.from(option_bottomsheet);
+       // option_bottomsheet = findViewById(R.id.option_bottomsheet);
+      //  sheetBehavior = BottomSheetBehavior.from(option_bottomsheet);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 //        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -191,6 +191,8 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
             holder.txt_emergency.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    holder.rel2.setVisibility(View.GONE);
+                    holder.rel2.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in));
                     startActivity(new Intent(MainActivity.this, EmergencyBooking.class));
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
@@ -200,7 +202,8 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
             holder.txt_schedule.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    holder.rel2.setVisibility(View.GONE);
+                    holder.rel2.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in));
                     startActivity(new Intent(MainActivity.this, ScheduleBooking.class));
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
@@ -219,7 +222,7 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
             TextView service_name,txt_emergency,txt_schedule;
             ImageView service_image;
             LinearLayout lin;
-            RelativeLayout rel;
+            RelativeLayout rel,rel2;
             CardView card_view;
             Button btnBook;
 
@@ -235,6 +238,7 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
                 btnBook=itemView.findViewById(R.id.btnBook);
                 txt_emergency=itemView.findViewById(R.id.txt_emergency);
                 txt_schedule=itemView.findViewById(R.id.txt_schedule);
+                rel2=itemView.findViewById(R.id.rel2);
 
             }
             void bind(final ServiceModel model) {
@@ -243,29 +247,29 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
                 anim.setFillAfter(true);
                 anim2.setFillAfter(true);
                 if (selected_position == -1 || selected_position == 0) {
-                    lin.setVisibility(View.GONE);
-                    lin.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.left_right2));
+                    rel2.setVisibility(View.GONE);
+                    rel2.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in));
                 } else {
                     if (selected_position == getAdapterPosition() ) {
-                        lin.setVisibility(View.VISIBLE);
-                        lin.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_left));
+                        rel2.setVisibility(View.VISIBLE);
+                        rel2.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_left));
 
                     } else {
-                        lin.setVisibility(View.GONE);
-                        lin.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.left_right2));
+                        rel2.setVisibility(View.GONE);
+                        rel2.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in));
                     }
                 }
 
                 btnBook.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (lin.getVisibility()==View.VISIBLE){
+                        if (rel2.getVisibility()==View.VISIBLE){
 
-                            lin.setVisibility(View.GONE);
-                            lin.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.left_right2));
+                            rel2.setVisibility(View.GONE);
+                            rel2.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in));
                         }else {
-                            lin.setVisibility(View.VISIBLE);
-                            lin.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_left));
+                            rel2.setVisibility(View.VISIBLE);
+                            rel2.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_left));
                         }
                     }
                 });
@@ -275,7 +279,7 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
 
     }
     private void toggleBottomSheet() {
-        sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+      //  sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
 
 
     }

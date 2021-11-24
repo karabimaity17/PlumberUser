@@ -32,7 +32,7 @@
         app:cardCornerRadius="@dimen/_15sdp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/_minus10sdp"
+        android:layout_marginBottom="@dimen/_minus15sdp"
         app:cardBackgroundColor="@color/colorAccent">
         <TextView
             android:id="@+id/txt"
@@ -43,9 +43,10 @@
             android:drawableRight="@drawable/right_arrow2"
             android:textColor="@color/colorWhite"
             android:drawablePadding="@dimen/_5sdp"
-            android:textSize="16sp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:fontFamily="@font/fonts_bold"/>
+            android:textSize="@dimen/_14sdp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/fonts_semibold"/>
     </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Plumber Service"
         android:fontFamily="@font/fonts_bold"
-        android:textSize="24sp"
+        android:textSize="@dimen/_17sdp"
         android:textColor="@color/colorAccent"
         android:gravity="center"
         android:textStyle="bold"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Find"
             android:fontFamily="@font/fonts_medium"
-            android:textSize="14sp"
+            android:textSize="@dimen/_10sdp"
             android:textColor="@color/colorDarkGrey"
             android:gravity="center"
             />
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Check"
             android:fontFamily="@font/fonts_medium"
-            android:textSize="14sp"
+            android:textSize="@dimen/_10sdp"
             android:textColor="@color/colorDarkGrey"
             android:gravity="center"
             />
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:text="Book"
             android:fontFamily="@font/fonts_medium"
-            android:textSize="14sp"
+            android:textSize="@dimen/_10sdp"
             android:textColor="@color/colorDarkGrey"
             android:gravity="center"
             />
@@ -77,9 +77,9 @@
         android:gravity="center_horizontal"
         android:lineSpacingExtra="4sp"
         android:layout_marginHorizontal="@dimen/_10sdp"
-        android:text=""
+        android:text="Plumber at your chosen location"
         android:textColor="@color/colorBlack"
-        android:textSize="18sp"
+        android:textSize="@dimen/_12sdp"
         android:textStyle="bold" />
 
     <TextView
@@ -91,11 +91,11 @@
         android:gravity="center_horizontal"
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:lineSpacingExtra="6sp"
-        android:text=""
+        android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document"
         android:textColor="@color/colorBlack"
         android:textStyle="normal"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:textSize="14sp"
+        android:textSize="@dimen/_10sdp"
         />
 
 </LinearLayout>

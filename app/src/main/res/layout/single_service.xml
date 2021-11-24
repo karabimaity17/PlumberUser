@@ -66,49 +66,56 @@
                     android:layout_alignParentRight="true"
                     android:src="@drawable/plumber"
                     android:layout_alignParentBottom="true"/>
-                <LinearLayout
-                    android:id="@+id/lin"
-                    android:layout_width="@dimen/_185sdp"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:visibility="visible"
-                    android:gravity="center"
-                    android:layout_alignParentRight="true"
-                    android:background="@drawable/gradiant1"
-
-                    >
-                    <Button
-                        android:id="@+id/txt_emergency"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorWhite"
-                        android:text="Emergency \nBooking"
-                        android:background="@drawable/box"
-                        android:backgroundTint="@color/colorDarkGrey"
-                        android:textSize="@dimen/_12sdp"
-                        android:textAllCaps="false"
-                        android:fontFamily="@font/fonts_semibold"
-                        android:padding="@dimen/_5sdp"
+                    android:background="@android:color/transparent"
+                    android:id="@+id/rel2">
+                    <LinearLayout
+                        android:id="@+id/lin"
+                        android:layout_width="@dimen/_185sdp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="visible"
                         android:gravity="center"
-                        android:lines="2"
-                        android:layout_margin="@dimen/_8sdp"
-                        />
-                    <Button
-                        android:id="@+id/txt_schedule"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/box"
-                        android:textColor="@color/colorDarkGrey"
-                        android:text="Schedule\nBooking"
-                        android:textSize="@dimen/_12sdp"
-                        android:textAllCaps="false"
-                        android:gravity="center"
-                        android:fontFamily="@font/fonts_semibold"
-                        android:padding="@dimen/_5sdp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/gradiant1"
 
-                        android:lines="2"
-                        android:layout_margin="@dimen/_8sdp"/>
-                </LinearLayout>
+                        >
+                        <Button
+                            android:id="@+id/txt_emergency"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorWhite"
+                            android:text="Emergency \nBooking"
+                            android:background="@drawable/box"
+                            android:backgroundTint="@color/colorDarkGrey"
+                            android:textSize="@dimen/_12sdp"
+                            android:textAllCaps="false"
+                            android:fontFamily="@font/fonts_semibold"
+                            android:padding="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:lines="2"
+                            android:layout_margin="@dimen/_8sdp"
+                            />
+                        <Button
+                            android:id="@+id/txt_schedule"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/box"
+                            android:textColor="@color/colorDarkGrey"
+                            android:text="Schedule\nBooking"
+                            android:textSize="@dimen/_12sdp"
+                            android:textAllCaps="false"
+                            android:gravity="center"
+                            android:fontFamily="@font/fonts_semibold"
+                            android:padding="@dimen/_5sdp"
+
+                            android:lines="2"
+                            android:layout_margin="@dimen/_8sdp"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
