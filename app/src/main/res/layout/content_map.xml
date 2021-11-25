@@ -5,9 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        app:cardCornerRadius="@dimen/_20sdp"
+        android:layout_width="@dimen/_34sdp"
+        android:layout_height="@dimen/_34sdp"
+        app:cardCornerRadius="@dimen/_17sdp"
         app:cardBackgroundColor="@color/colorWhite"
         android:layout_margin="@dimen/_10sdp"
         android:id="@+id/back_btn">

@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.view.ViewGroup;
@@ -152,6 +153,51 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
         drawer.setViewScale(Gravity.START, 0.9f);
         drawer.setRadius(Gravity.START, 35);
         drawer.setViewElevation(Gravity.START, 20);
+
+        navigationView.setItemIconTintList(null);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected( MenuItem menuItem) {
+
+                int id = menuItem.getItemId();
+                switch (id) {
+                    case R.id.nav_home:
+                        startActivity(new Intent(MainActivity.this,MainActivity.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        finish();
+                        break;
+                    case R.id.nav_booking_history:
+                        //startActivity(new Intent(MainActivity.this,TomorrowBooking.class));
+                        //overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        break;
+
+                    case R.id.nav_profile:
+                        startActivity(new Intent(MainActivity.this,MyProfile.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        break;
+                    case R.id.nav_schedule:
+                        startActivity(new Intent(MainActivity.this,ScheduleHistory.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        break;
+                    case R.id.nav_privacy:
+                       /* startActivity(new Intent(MainActivity.this,FAQ_Activity.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);*/
+                        break;
+
+                    case R.id.nav_terms:
+                       // startActivity(new Intent(MainActivity.this,ContactUs.class));
+                      //  overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        break;
+
+
+
+                    default:
+                        return true;
+                }
+                return true;
+            }
+        });
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 //        mAppBarConfiguration = new AppBarConfiguration.Builder(

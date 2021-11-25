@@ -19,9 +19,10 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_set_location">SetLocation</string>
-    <string name="title_activity_search_location">SearchLocation</string>
-    <string name="title_activity_emergency_boocking">EmergencyBoocking</string>
-    <string name="title_activity_schedule_booking">ScheduleBooking</string>
-    <string name="title_activity_schedule_history">Schedule Booking History</string>
+    <string name="title_activity_set_location">Set Location</string>
+    <string name="title_activity_search_location">Search Location</string>
+    <string name="title_activity_emergency_boocking">Emergency Boocking</string>
+    <string name="title_activity_schedule_booking">Schedule Booking</string>
+    <string name="title_activity_my_profile">My Profile</string>
+    <string name="title_activity_schedule_history">Schedule History</string>
 </resources>
