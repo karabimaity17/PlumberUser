@@ -23,9 +23,27 @@
 -->
 
     <include layout="@layout/content_my_profile" />
-    <include layout="@layout/edit_profile_bottomsheet" />
-    <include layout="@layout/other_bottomsheet" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_200sdp">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include layout="@layout/edit_profile_bottomsheet" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_250sdp">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <include layout="@layout/other_bottomsheet" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </RelativeLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

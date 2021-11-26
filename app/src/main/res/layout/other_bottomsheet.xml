@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_300sdp"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:behavior_hideable="false"
     app:behavior_peekHeight="@dimen/_50sdp"
-    android:maxHeight="@dimen/_300sdp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     android:id="@+id/other_bottomsheet"
     app:cardCornerRadius="@dimen/_30sdp"
     app:cardElevation="0dp"
-   android:layout_marginBottom="@dimen/_minus60sdp">
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+   app:cardBackgroundColor="@color/colorWhite">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
+            android:background="#d8fcf7"
             android:orientation="vertical"
             android:padding="@dimen/_10sdp">
+           <!-- <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_250sdp"/>-->
             <View
                 android:layout_width="@dimen/_80sdp"
                 android:layout_height="@dimen/_4sdp"
@@ -58,7 +57,7 @@
                 android:fontFamily="@font/fonts_regular"
                 android:drawableLeft="@drawable/booking"
                 android:drawableTint="@color/colorPrimary"
-                android:backgroundTint="#EDEDED"/>
+                android:backgroundTint="@color/colorWhite"/>
 
             <Button
                 android:id="@+id/schedule_btn"
@@ -75,7 +74,7 @@
                 android:fontFamily="@font/fonts_regular"
                 android:drawableLeft="@drawable/schedule"
                 android:drawableTint="@color/colorAccent"
-                android:backgroundTint="#EDEDED"/>
+                android:backgroundTint="@color/colorWhite"/>
 
             <TextView
                 android:id="@+id/sign_up"
@@ -100,6 +99,6 @@
 
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+
 
 </androidx.cardview.widget.CardView>

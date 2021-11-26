@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:behavior_hideable="false"
     app:behavior_peekHeight="@dimen/_100sdp"
-    android:maxHeight="@dimen/_400sdp"
     app:cardElevation="0dp"
-    app:cardBackgroundColor="@color/colorWhite"
+    app:cardBackgroundColor="@android:color/transparent"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     android:id="@+id/edit_profile_bottomsheet"
     app:cardCornerRadius="@dimen/_30sdp"
@@ -16,165 +15,176 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#EDEDED"
             android:orientation="vertical"
-            android:padding="@dimen/_10sdp">
-            <View
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_4sdp"
-                android:background="@drawable/box_grey"
-                android:layout_gravity="center"/>
-
-
-
-
-            <TextView
-                android:id="@+id/nameToolbar"
+            >
+           <!-- <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:gravity="start"
-                android:text="Edit Profile"
-                android:drawableRight="@drawable/edit"
-                android:textSize="@dimen/_12sdp"
-                android:textAllCaps="true"
-                android:fontFamily="@font/fonts_regular"
-                android:textStyle="bold"
-                android:padding="@dimen/_8sdp"
-                android:textColor="@color/colorBlack" />
-            <androidx.core.widget.NestedScrollView
+                android:layout_height="@dimen/_100sdp"/>-->
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_250sdp"
-                android:layout_marginBottom="@dimen/_40sdp">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#fff2f2"
+                android:padding="@dimen/_10sdp">
+                <View
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_4sdp"
+                    android:background="@drawable/box_grey"
+                    android:layout_gravity="center"/>
+
+
+
+
+                <TextView
+                    android:id="@+id/nameToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:gravity="start"
+                    android:text="Edit Profile"
+                    android:drawableRight="@drawable/edit"
+                    android:textSize="@dimen/_12sdp"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/fonts_regular"
+                    android:textStyle="bold"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/colorBlack" />
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_40sdp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                app:startIconDrawable="@drawable/person"
-                android:textColorHint="@color/colorBlack"
-                app:boxStrokeColor="@color/colorBlack"
-                app:startIconTint="@color/colorBlack"
-                app:hintTextColor="@color/colorBlack"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:startIconDrawable="@drawable/person"
+                        android:textColorHint="@color/colorBlack"
+                        app:boxStrokeColor="@color/colorBlack"
+                        app:startIconTint="@color/colorBlack"
+                        app:hintTextColor="@color/colorBlack"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/edt_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textColor="@color/colorBlack"
-                    android:textColorHint="@color/colorBlack"
-                    android:imeOptions="actionNext"
-                    android:textSize="@dimen/_12sdp"
-                    android:fontFamily="@font/fonts_regular"
-                    android:hint="Enter Name"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                app:startIconDrawable="@drawable/email"
-                android:textColorHint="@color/colorBlack"
-                app:boxStrokeColor="@color/colorBlack"
-                app:startIconTint="@color/colorBlack"
-                app:hintTextColor="@color/colorBlack"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/edt_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:textColorHint="@color/colorBlack"
-                    android:imeOptions="actionNext"
-                    android:textSize="@dimen/_12sdp"
-                    android:fontFamily="@font/fonts_regular"
-                    android:textColor="@color/colorBlack"
-                    android:hint="Enter Email"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:textColorHint="@color/colorBlack"
-                app:boxStrokeColor="@color/colorBlack"
-                app:startIconTint="@color/colorBlack"
-                app:startIconDrawable="@drawable/phone"
-                app:hintTextColor="@color/colorBlack"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/edt_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:maxLength="10"
-                    android:textColorHint="@color/colorBlack"
-                    android:imeOptions="actionNext"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/_12sdp"
-                    android:fontFamily="@font/fonts_regular"
-                    android:hint="Enter Phone Number"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edt_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textColor="@color/colorBlack"
+                            android:textColorHint="@color/colorBlack"
+                            android:imeOptions="actionNext"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/fonts_regular"
+                            android:hint="Enter Name"/>
+                    </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:orientation="horizontal"
-                android:textColorHint="@color/colorBlack"
-                app:boxStrokeColor="@color/colorBlack"
-                app:startIconTint="@color/colorBlack"
-                app:startIconDrawable="@drawable/pass"
-                app:hintTextColor="@color/colorBlack"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/edt_password"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:startIconDrawable="@drawable/email"
+                        android:textColorHint="@color/colorBlack"
+                        app:boxStrokeColor="@color/colorBlack"
+                        app:startIconTint="@color/colorBlack"
+                        app:hintTextColor="@color/colorBlack"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-                    android:inputType="textPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:imeOptions="actionGo"
-                    android:textColorHint="@color/colorBlack"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/_12sdp"
-                    android:fontFamily="@font/fonts_regular"
-                    android:hint="Enter Password"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edt_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:textColorHint="@color/colorBlack"
+                            android:imeOptions="actionNext"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/fonts_regular"
+                            android:textColor="@color/colorBlack"
+                            android:hint="Enter Email"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:textColorHint="@color/colorBlack"
+                        app:boxStrokeColor="@color/colorBlack"
+                        app:startIconTint="@color/colorBlack"
+                        app:startIconDrawable="@drawable/phone"
+                        app:hintTextColor="@color/colorBlack"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <TextView
-                android:id="@+id/sign_up"
-                android:layout_width="@dimen/_150sdp"
-                android:layout_height="@dimen/_45sdp"
-                android:background="@drawable/btn_background"
-                android:layout_gravity="center"
-                android:elevation="@dimen/_5sdp"
-                android:clickable="true"
-                android:text="Update"
-                android:textColor="@color/colorWhite"
-                android:textSize="@dimen/_12sdp"
-                android:layout_margin="@dimen/_15sdp"
-                android:textStyle="bold"
-                android:fontFamily="@font/fonts_semibold"
-                android:gravity="center"
-                android:layout_centerHorizontal="true"
-                />
-                </LinearLayout>
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edt_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:textColorHint="@color/colorBlack"
+                            android:imeOptions="actionNext"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/fonts_regular"
+                            android:hint="Enter Phone Number"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:orientation="horizontal"
+                        android:textColorHint="@color/colorBlack"
+                        app:boxStrokeColor="@color/colorBlack"
+                        app:startIconTint="@color/colorBlack"
+                        app:startIconDrawable="@drawable/pass"
+                        app:hintTextColor="@color/colorBlack"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edt_password"
+
+                            android:inputType="textPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionGo"
+                            android:textColorHint="@color/colorBlack"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/fonts_regular"
+                            android:hint="Enter Password"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/sign_up"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:background="@drawable/btn_background"
+                        android:layout_gravity="center"
+                        android:elevation="@dimen/_5sdp"
+                        android:clickable="true"
+                        android:text="Update"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_margin="@dimen/_15sdp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/fonts_semibold"
+                        android:gravity="center"
+                        android:layout_centerHorizontal="true"
+                        />
+            </LinearLayout>
+
+
             </androidx.core.widget.NestedScrollView>
+            </LinearLayout>
         </LinearLayout>
 
 

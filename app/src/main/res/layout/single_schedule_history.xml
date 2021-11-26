@@ -166,14 +166,16 @@
                     android:gravity="end"
                     android:orientation="horizontal">
                     <ImageView
+                        android:id="@+id/chat"
                         android:layout_width="@dimen/_18sdp"
                         android:layout_height="@dimen/_20sdp"
-                        android:src="@drawable/chat"/>
+                        android:src="@drawable/message"/>
                     <ImageView
+                        android:id="@+id/call"
                         android:layout_width="@dimen/_18sdp"
                         android:layout_height="@dimen/_18sdp"
                         android:layout_marginHorizontal="@dimen/_20sdp"
-                        android:src="@drawable/call"/>
+                        android:src="@drawable/phone"/>
                     <ImageView
                         android:layout_width="@dimen/_18sdp"
                         android:layout_height="@dimen/_18sdp"

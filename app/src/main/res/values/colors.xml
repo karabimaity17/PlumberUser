@@ -10,4 +10,8 @@
     <color name="colorBlack">#000000</color>
     <color name="colorGrey">#BCBCBC</color>
     <color name="colorDarkGrey">#4A4949</color>
+
+    <color name="confirm_color">#22c9c8</color>
+    <color name="unconfirm_color">#6c7694</color>
+    <color name="cancel_color">#ff3e3e</color>
 </resources>

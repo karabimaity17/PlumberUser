@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Build;
@@ -21,21 +22,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
+
 import com.google.android.material.navigation.NavigationView;
 import com.infideap.drawerbehavior.AdvanceDrawerLayout;
 import com.plumber.user.Model.PlumberModel;
@@ -61,7 +50,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallback,
         LocationListener, GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener*/{
-
+    private static final int TIME_DELAY = 2000;
+    private static long back_pressed;
     private AppBarConfiguration mAppBarConfiguration;
 
 //    private GoogleMap mMap;
@@ -172,10 +162,12 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
                         break;
 
                     case R.id.nav_profile:
+                        drawer.closeDrawer(GravityCompat.START);
                         startActivity(new Intent(MainActivity.this,MyProfile.class));
                         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         break;
                     case R.id.nav_schedule:
+                        drawer.closeDrawer(GravityCompat.START);
                         startActivity(new Intent(MainActivity.this,ScheduleHistory.class));
                         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         break;
@@ -464,4 +456,28 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
 //        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
 //               || super.onSupportNavigateUp();
 //    }
+
+    @Override
+    public void onBackPressed() {
+        drawer = findViewById(R.id.drawer_layout);
+
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else if (back_pressed + TIME_DELAY > System.currentTimeMillis()) {
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            this.finish();
+        } else {
+            Toast.makeText(getBaseContext(),"Press once again to exit!" ,
+                    Toast.LENGTH_SHORT).show();
+        }
+        back_pressed = System.currentTimeMillis();
+
+    }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
+        final Configuration override = new Configuration(newBase.getResources().getConfiguration());
+        override.fontScale = 1.0f;
+        applyOverrideConfiguration(override);
+    }
 }

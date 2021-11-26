@@ -28,9 +28,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Schedule Booking History"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_13sdp"
             android:textStyle="bold"
-            android:fontFamily="@font/fonts_regular"
+            android:fontFamily="@font/fonts_medium"
             android:textColor="@color/colorBlack"
             android:gravity="center_vertical"/>
     </LinearLayout>

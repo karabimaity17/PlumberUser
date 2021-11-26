@@ -1,6 +1,8 @@
 package com.plumber.user;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -13,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,6 +23,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -32,6 +36,7 @@ public class ScheduleHistory extends AppCompatActivity {
     RecyclerView recyclerView;
     List<ScheduleHistoryModel> scheduleHistoryModels;
     ScheduleHistoryAdapter scheduleHistoryAdapter;
+    CardView back_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +47,18 @@ public class ScheduleHistory extends AppCompatActivity {
 
         //mapping
         recyclerView = findViewById(R.id.list);
+        back_btn = findViewById(R.id.back_btn);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         scheduleHistoryModels=new ArrayList<>();
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+            }
+        });
 
         //dummy data for recycler
         scheduleHistoryModels.add(new ScheduleHistoryModel("1","James Winston","PLUMBING EXPERT",
@@ -76,6 +90,7 @@ public class ScheduleHistory extends AppCompatActivity {
             return new ScheduleHistoryAdapter.ViewHolder(view);
         }
 
+        @SuppressLint("ResourceType")
         @Override
         public void onBindViewHolder(@NonNull final ScheduleHistoryAdapter.ViewHolder holder, final int position) {
             holder.num_rating.setText(scheduleHistoryModels.get(position).getRatting());
@@ -93,6 +108,9 @@ public class ScheduleHistory extends AppCompatActivity {
                 holder.card_background.setCardBackgroundColor(Color.parseColor("#f2f3f9"));
                 holder.line.setBackgroundColor(Color.parseColor("#e2e7f5"));
                 holder.status.setTextColor(Color.parseColor("#6c7694"));
+                holder.chat.setColorFilter(ContextCompat.getColor(context, R.color.unconfirm_color), android.graphics.PorterDuff.Mode.MULTIPLY);
+                holder.call.setColorFilter(ContextCompat.getColor(context, R.color.unconfirm_color), android.graphics.PorterDuff.Mode.MULTIPLY);
+
                 holder.plumber_image.setBackgroundResource(R.drawable.man);
             }
            else if(scheduleHistoryModels.get(position).getStatus().equals("Confirmed")){
@@ -101,6 +119,9 @@ public class ScheduleHistory extends AppCompatActivity {
                 holder.card_background.setCardBackgroundColor(Color.parseColor("#d8fcf7"));
                 holder.line.setBackgroundColor(Color.parseColor("#cef7f3"));
                 holder.status.setTextColor(Color.parseColor("#22c9c8"));
+                holder.chat.setColorFilter(ContextCompat.getColor(context, R.color.confirm_color), android.graphics.PorterDuff.Mode.MULTIPLY);
+                holder.call.setColorFilter(ContextCompat.getColor(context, R.color.confirm_color), android.graphics.PorterDuff.Mode.MULTIPLY);
+
                 holder.plumber_image.setImageResource(scheduleHistoryModels.get(position).getImage());
             }
            else if(scheduleHistoryModels.get(position).getStatus().equals("Canceled")){
@@ -109,6 +130,9 @@ public class ScheduleHistory extends AppCompatActivity {
                 holder.card_background.setCardBackgroundColor(Color.parseColor("#fff2f2"));
                 holder.line.setBackgroundColor(Color.parseColor("#ffe3e3"));
                 holder.status.setTextColor(Color.parseColor("#ff3e3e"));
+                holder.chat.setColorFilter(ContextCompat.getColor(context, R.color.cancel_color), android.graphics.PorterDuff.Mode.MULTIPLY);
+                holder.call.setColorFilter(ContextCompat.getColor(context, R.color.cancel_color), android.graphics.PorterDuff.Mode.MULTIPLY);
+
                 holder.plumber_image.setImageResource(scheduleHistoryModels.get(position).getImage());
             }
         }
@@ -120,6 +144,7 @@ public class ScheduleHistory extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             TextView num_rating,day,date,time,desc,name,status;
+            ImageView chat,call;
             CircleImageView plumber_image;
             CardView card_background;
             LinearLayout search_lin,details_lin;
@@ -138,6 +163,8 @@ public class ScheduleHistory extends AppCompatActivity {
                 search_lin=itemView.findViewById(R.id.find_lin);
                 details_lin=itemView.findViewById(R.id.details_lin);
                 line=itemView.findViewById(R.id.line);
+                chat=itemView.findViewById(R.id.chat);
+                call=itemView.findViewById(R.id.call);
 
 
 
@@ -146,5 +173,19 @@ public class ScheduleHistory extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        this.finish();
+
+    }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
+        final Configuration override = new Configuration(newBase.getResources().getConfiguration());
+        override.fontScale = 1.0f;
+        applyOverrideConfiguration(override);
     }
 }

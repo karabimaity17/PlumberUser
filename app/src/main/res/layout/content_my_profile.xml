@@ -28,16 +28,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="My Profile"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_13sdp"
             android:textStyle="bold"
-            android:fontFamily="@font/fonts_regular"
+            android:fontFamily="@font/fonts_medium"
             android:textColor="@color/colorBlack"
             android:gravity="center_vertical"/>
     </LinearLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -49,15 +47,15 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 app:cardCornerRadius="@dimen/_30sdp"
                 android:layout_marginTop="@dimen/_120sdp"
-
+                android:layout_marginBottom="@dimen/_minus50sdp"
                 app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_380sdp"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/_90sdp"
                     android:orientation="vertical"
                     android:paddingBottom="@dimen/_50sdp">
@@ -69,7 +67,8 @@
                         android:layout_margin="@dimen/_10sdp"
                         android:padding="@dimen/_6sdp"
                         android:background="@drawable/box_grey"
-                        android:backgroundTint="#EDEDED">
+                        android:backgroundTint="#EDEDED"
+                        android:elevation="@dimen/_5sdp">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="@dimen/_46sdp"
@@ -126,7 +125,8 @@
                         android:layout_marginHorizontal="@dimen/_10sdp"
                         android:padding="@dimen/_6sdp"
                         android:background="@drawable/box_grey"
-                        android:backgroundTint="#EDEDED">
+                        android:backgroundTint="#EDEDED"
+                        android:elevation="@dimen/_5sdp">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="@dimen/_46sdp"
@@ -177,6 +177,12 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:background="#d8fcf7"
+                        android:layout_marginTop="@dimen/_200sdp"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -257,5 +263,4 @@
 
 
         </RelativeLayout>
-    </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

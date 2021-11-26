@@ -21,9 +21,9 @@ import android.widget.TextView;
 public class MyProfile extends AppCompatActivity {
     CardView edit_profile_bottomsheet,other_bottomsheet;
     CardView back_btn;
-    TextView nameToolbar,nameToolbar2;
+    TextView profile_nameToolbar,other_nameToolbar;
     Button schedule_btn;
-    BottomSheetBehavior sheetBehavior,sheetBehavior2;
+    BottomSheetBehavior profile_sheetBehavior,other_sheetBehavior;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,19 +32,13 @@ public class MyProfile extends AppCompatActivity {
 
         edit_profile_bottomsheet = findViewById(R.id.edit_profile_bottomsheet);
         other_bottomsheet = findViewById(R.id.other_bottomsheet);
-        nameToolbar = findViewById(R.id.nameToolbar);
-        nameToolbar2 = findViewById(R.id.nameToolbar2);
+        profile_nameToolbar = findViewById(R.id.nameToolbar);
+        other_nameToolbar = findViewById(R.id.nameToolbar2);
         back_btn = findViewById(R.id.back_btn);
         schedule_btn = findViewById(R.id.schedule_btn);
-        sheetBehavior = BottomSheetBehavior.from(other_bottomsheet);
-        sheetBehavior2 = BottomSheetBehavior.from(edit_profile_bottomsheet);
+        other_sheetBehavior = BottomSheetBehavior.from(other_bottomsheet);
+        profile_sheetBehavior = BottomSheetBehavior.from(edit_profile_bottomsheet);
 
-        if(sheetBehavior.getState()==BottomSheetBehavior.STATE_EXPANDED){
-            sheetBehavior2.setState(BottomSheetBehavior.STATE_EXPANDED);
-        }
-        if(sheetBehavior2.getState()==BottomSheetBehavior.STATE_COLLAPSED){
-            sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-        }
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,16 +48,28 @@ public class MyProfile extends AppCompatActivity {
             }
         });
 
-        nameToolbar.setOnClickListener(new View.OnClickListener() {
+        profile_nameToolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sheetBehavior2.setState(BottomSheetBehavior.STATE_EXPANDED);
+                if(profile_sheetBehavior.getState()==BottomSheetBehavior.STATE_COLLAPSED){
+                    profile_sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                }else{
+                    profile_sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    other_sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
             }
         });
-        nameToolbar2.setOnClickListener(new View.OnClickListener() {
+        other_nameToolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                if(other_sheetBehavior.getState()==BottomSheetBehavior.STATE_COLLAPSED){
+                    other_sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    profile_sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                }else{
+                    other_sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
             }
         });
         schedule_btn.setOnClickListener(new View.OnClickListener() {
