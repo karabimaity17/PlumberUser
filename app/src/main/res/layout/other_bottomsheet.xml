@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
                 android:gravity="start"
-                android:text="Other"
+                android:text="Other details"
                 android:textSize="@dimen/_12sdp"
                 android:fontFamily="@font/fonts_regular"
                 android:textStyle="bold"

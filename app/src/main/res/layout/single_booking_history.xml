@@ -4,169 +4,200 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="@dimen/_2sdp"
     android:layout_height="@dimen/_142sdp">
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:cardBackgroundColor="#d8fcf7"
         app:cardCornerRadius="@dimen/_5sdp"
         app:cardElevation="@dimen/_3sdp"
-        android:id="@+id/card_background"
         app:cardUseCompatPadding="true">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="@dimen/_10sdp"
-            android:orientation="vertical"
-            android:layout_marginVertical="@dimen/_10sdp">
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1.5">
+                    android:layout_weight="1.5"
+                    android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
+                        android:orientation="horizontal">
+
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=""
                             android:id="@+id/date"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/fonts_medium"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/_10sdp"/>
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=""
-                            android:fontFamily="@font/fonts_regular"
+                            android:fontFamily="@font/fonts_medium"
+                            android:text="AUG 4, "
                             android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
                             android:id="@+id/day"
-                            android:textSize="@dimen/_10sdp"/>
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=""
-                            android:textStyle="bold"
-                            android:id="@+id/time"
-                            android:fontFamily="@font/fonts_medium"
+                            android:fontFamily="@font/fonts_regular"
+                            android:text="FRIDAY"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/_10sdp"/>
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/fonts_medium"
+                            android:text="(2:00 PM)"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
+
                     <LinearLayout
+                        android:id="@+id/details_lin"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_69sdp"
-                        android:visibility="gone"
-                        android:id="@+id/details_lin"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
                         <TextView
+                            android:id="@+id/name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_10sdp"
-                            android:text=""
-                            android:id="@+id/name"
                             android:fontFamily="@font/fonts_medium"
+                            android:text="Rintu Naskar"
+                            android:textColor="@color/colorBlack"
                             android:textSize="@dimen/_12sdp"
-                            android:textStyle="bold"
-                            android:textColor="@color/colorBlack"/>
+                            android:textStyle="bold" />
+
                         <TextView
+                            android:id="@+id/desc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text=""
-                            android:id="@+id/desc"
                             android:layout_marginTop="@dimen/_2sdp"
                             android:fontFamily="@font/fonts_regular"
-                            android:textSize="@dimen/_10sdp"
-                            android:textColor="@color/colorBlack"/>
-                        <TextView
-                            android:id="@+id/num_rating"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=""
-                            android:fontFamily="@font/fonts_semibold"
+                            android:text="Expert"
                             android:textColor="@color/colorBlack"
-                            android:gravity="center"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <TextView
+                            android:id="@+id/booking_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/fonts_medium"
+                            android:text="Schedule Booking"
+                            android:textColor="@color/colorBlack"
                             android:textSize="@dimen/_10sdp"
-                            android:background="@drawable/box_white"
-                            android:layout_margin="@dimen/_3sdp"
-                            android:drawablePadding="@dimen/_2sdp"
-                            android:drawableTint="@color/colorAccent"
-                            android:drawableRight="@drawable/star"
-                            android:paddingHorizontal="@dimen/_2sdp"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentBottom="true"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
+
                     <LinearLayout
+                        android:id="@+id/find_lin"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_60sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
                         android:orientation="vertical"
-                        android:id="@+id/find_lin"
-                        android:visibility="gone"
-                        android:layout_marginTop="@dimen/_5sdp">
+                        android:visibility="gone">
+
                         <pl.droidsonroids.gif.GifImageView
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_30sdp"
                             android:layout_marginTop="@dimen/_5sdp"
-                            android:src="@drawable/searching"/>
+                            android:src="@drawable/searching" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="We are finding a plumber for you...."
-                            android:fontFamily="@font/fonts_regular"
-                            android:textColor="@color/colorBlack"
-                            android:textStyle="bold"
                             android:layout_marginTop="@dimen/_5sdp"
-                            android:textSize="@dimen/_10sdp"/>
+                            android:fontFamily="@font/fonts_regular"
+                            android:text="We are finding a plumber for you...."
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_weight="0.5">
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_weight="0.5"
+                    android:gravity="center">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/profile_image"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_60sdp"
 
-                      />
+                        />
                 </LinearLayout>
 
             </LinearLayout>
+
             <View
+                android:id="@+id/line"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_marginTop="@dimen/_2sdp"
-                android:id="@+id/line"
-              />
+                android:background="#cef7f3" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:orientation="horizontal">
-                <TextView
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.4"
-                    android:text=""
-                    android:fontFamily="@font/fonts_bold"
-                    android:textSize="@dimen/_12sdp"
-                    android:id="@+id/status"/>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/fonts_bold"
+                        android:text="Completed"
+                        android:textColor="#22c9c8"
+                        android:textSize="@dimen/_12sdp" />
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="end"
-                    android:orientation="horizontal">
-                    <ImageView
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/b_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/fonts_medium"
+                        android:gravity="end"
+                        android:text="#1234569754"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_10sdp" />
+                    <!-- <ImageView
                         android:id="@+id/chat"
                         android:layout_width="@dimen/_18sdp"
                         android:layout_height="@dimen/_20sdp"
@@ -180,9 +211,9 @@
                     <ImageView
                         android:layout_width="@dimen/_18sdp"
                         android:layout_height="@dimen/_18sdp"
-                        android:src="@drawable/dots"/>
+                        android:src="@drawable/dots"/>-->
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

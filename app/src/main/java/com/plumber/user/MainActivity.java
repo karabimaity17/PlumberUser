@@ -157,8 +157,9 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
                         finish();
                         break;
                     case R.id.nav_booking_history:
-                        //startActivity(new Intent(MainActivity.this,TomorrowBooking.class));
-                        //overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        drawer.closeDrawer(GravityCompat.START);
+                        startActivity(new Intent(MainActivity.this,BookingHistory.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         break;
 
                     case R.id.nav_profile:

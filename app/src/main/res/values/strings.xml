@@ -25,4 +25,5 @@
     <string name="title_activity_schedule_booking">Schedule Booking</string>
     <string name="title_activity_my_profile">My Profile</string>
     <string name="title_activity_schedule_history">Schedule History</string>
+    <string name="title_activity_booking_history">BookingHistory</string>
 </resources>
