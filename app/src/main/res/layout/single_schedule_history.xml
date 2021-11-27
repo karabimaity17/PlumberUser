@@ -108,13 +108,18 @@
                         android:layout_height="@dimen/_60sdp"
                         android:orientation="vertical"
                         android:id="@+id/find_lin"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:layout_marginTop="@dimen/_5sdp">
-                        <pl.droidsonroids.gif.GifImageView
+                       <!-- <pl.droidsonroids.gif.GifImageView
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_30sdp"
                             android:layout_marginTop="@dimen/_5sdp"
-                            android:src="@drawable/searching"/>
+                            android:src="@drawable/searching"/>-->
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:src="@drawable/search2"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

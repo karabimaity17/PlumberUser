@@ -38,6 +38,32 @@
                     android:fontFamily="@font/fonts_regular"
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:lineSpacingExtra="@dimen/_5sdp"/>
+                <TextView
+                    android:id="@+id/month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Month,year"
+                    android:background="@drawable/box"
+                    android:gravity="center"
+                    android:backgroundTint="@color/colorAccent"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/fonts_semibold"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+
+                    android:lineSpacingExtra="@dimen/_5sdp"/>
+
+                <devs.mulham.horizontalcalendar.HorizontalCalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    app:textColorSelected="#FFFF"/>
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"
@@ -47,7 +73,7 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginHorizontal="@dimen/_10sdp"
                     android:layout_below="@+id/lin"
-                    >
+                    android:visibility="gone">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -72,6 +98,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:lineSpacingExtra="@dimen/_5sdp"/>
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/pick_time"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"
                     app:cardCornerRadius="@dimen/_4sdp"
@@ -82,12 +109,13 @@
                     android:layout_below="@+id/lin"
                     >
                     <TextView
+                        android:id="@+id/time"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Select Time"
                         android:textColorHint="@color/colorGrey"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/fonts_light"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/fonts_regular"
                         android:textStyle="bold"
                         android:gravity="center_vertical"
                         android:textColor="@color/colorBlack"

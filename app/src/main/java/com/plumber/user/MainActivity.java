@@ -29,7 +29,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.infideap.drawerbehavior.AdvanceDrawerLayout;
 import com.plumber.user.Model.PlumberModel;
 import com.plumber.user.Model.ServiceModel;
-import com.ramotion.foldingcell.FoldingCell;
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
     List<ServiceModel> serviceModels = new ArrayList<>();
     PlumberAdapter plumberAdapter;
     List<PlumberModel> plumberModels = new ArrayList<>();
-    TextView txt_location;
+    TextView txt_location,logout;
     User user;
 
     AdvanceDrawerLayout drawer;
@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
         recycler_category = findViewById(R.id.recycler_view);
         txt_location = findViewById(R.id.txt_location);
         recycler_plumbers = findViewById(R.id.recycler_plumbers);
+        logout = findViewById(R.id.logout);
        // option_bottomsheet = findViewById(R.id.option_bottomsheet);
       //  sheetBehavior = BottomSheetBehavior.from(option_bottomsheet);
 
@@ -120,6 +121,14 @@ public class MainActivity extends AppCompatActivity /*implements OnMapReadyCallb
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,SearchLocation.class));
                 overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                finish();
             }
         });
 
