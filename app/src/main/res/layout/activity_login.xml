@@ -74,6 +74,7 @@
                             android:layout_weight="1"
                             android:textColor="@color/colorBlack"
                             android:text="Agents"
+                            android:visibility="gone"
                             android:gravity="center"
                             android:fontFamily="@font/fonts_regular"
                             android:textStyle="bold"
