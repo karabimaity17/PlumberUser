@@ -52,6 +52,7 @@
                             android:fontFamily="@font/fonts_regular"
                             android:textSize="@dimen/_10sdp"
                             android:textStyle="bold"
+                            android:gravity="center_vertical"
                             android:drawableLeft="@drawable/checked"
                             android:padding="@dimen/_5sdp"
                             android:drawablePadding="@dimen/_3sdp"/>

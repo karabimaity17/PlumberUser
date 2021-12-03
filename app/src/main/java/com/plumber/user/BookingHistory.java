@@ -2,6 +2,7 @@ package com.plumber.user;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
@@ -11,12 +12,17 @@ import com.plumber.user.Model.BookingHistoryModel;
 import com.plumber.user.Model.ScheduleHistoryModel;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ClickableSpan;
+import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +41,7 @@ public class BookingHistory extends AppCompatActivity {
     List<BookingHistoryModel> bookingHistoryModels;
    BookingHistoryAdapter bookingHistoryAdapter;
     CardView back_btn;
+    ClickableSpan click;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +97,16 @@ public class BookingHistory extends AppCompatActivity {
         @SuppressLint("ResourceType")
         @Override
         public void onBindViewHolder(@NonNull final BookingHistoryAdapter.ViewHolder holder, final int position) {
+
+            SpannableStringBuilder sb = new SpannableStringBuilder( "View Invoice");
+            final ClickableSpan click = new ClickableSpan() {
+                @Override
+                public void onClick(@NonNull View view) {
+
+                }
+            };
+            sb.setSpan(click,0, 12, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            holder.view_btn.setText(sb);
             holder.booking_type.setText(bookingHistoryModels.get(position).getBooking_type());
             holder.name.setText(bookingHistoryModels.get(position).getName());
             holder.desc.setText(bookingHistoryModels.get(position).getDesc());
@@ -101,6 +118,43 @@ public class BookingHistory extends AppCompatActivity {
             holder.plumber_image.setImageResource(bookingHistoryModels.get(position).getImage());
 
 
+            holder.rate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(BookingHistory.this,R.style.CustomAlertDialog);
+                    ViewGroup viewGroup = v.findViewById(android.R.id.content);
+                    View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_rating, viewGroup, false);
+                    TextView cancel=dialogView.findViewById(R.id.cancel);
+                    TextView add=dialogView.findViewById(R.id.add);
+                    builder.setView(dialogView);
+                    final AlertDialog alertDialog = builder.create();
+                    cancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            alertDialog.dismiss();
+                        }
+                    });
+
+                    add.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            alertDialog.dismiss();
+                        }
+
+
+
+                    });
+                    alertDialog.show();
+                }
+            });
+            holder.pay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(context,PaymentSuccessful.class));
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    finish();
+                }
+            });
 
 
         }
@@ -111,7 +165,7 @@ public class BookingHistory extends AppCompatActivity {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            TextView booking_type,day,date,time,desc,name,status,booking_id;
+            TextView booking_type,day,date,time,desc,name,status,booking_id,view_btn,rate,pay;
            // ImageView chat,call;
             CircleImageView plumber_image;
            // CardView card_background;
@@ -120,15 +174,18 @@ public class BookingHistory extends AppCompatActivity {
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 booking_type=itemView.findViewById(R.id.booking_type);
-                booking_id=itemView.findViewById(R.id.b_id);
+                booking_id=itemView.findViewById(R.id.invoice_id);
                 day=itemView.findViewById(R.id.day);
                 date=itemView.findViewById(R.id.date);
                 time=itemView.findViewById(R.id.time);
                 desc=itemView.findViewById(R.id.desc);
                 name=itemView.findViewById(R.id.name);
                 status=itemView.findViewById(R.id.status);
+                view_btn=itemView.findViewById(R.id.view_btn);
                // card_background=itemView.findViewById(R.id.card_background);
                 plumber_image=itemView.findViewById(R.id.profile_image);
+                rate=itemView.findViewById(R.id.rate);
+                pay=itemView.findViewById(R.id.pay);
                // search_lin=itemView.findViewById(R.id.find_lin);
                // details_lin=itemView.findViewById(R.id.details_lin);
              //   line=itemView.findViewById(R.id.line);

@@ -26,4 +26,6 @@
     <string name="title_activity_my_profile">My Profile</string>
     <string name="title_activity_schedule_history">Schedule History</string>
     <string name="title_activity_booking_history">BookingHistory</string>
+
+    <string name="view"><u>View Invoice</u></string>
 </resources>

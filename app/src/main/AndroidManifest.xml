@@ -15,10 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".BookingSuccessful"></activity>
+        <activity android:name=".PaymentSuccessful" />
         <activity
             android:name=".BookingHistory"
             android:label="@string/title_activity_booking_history"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MapActivity" />
         <activity
             android:name=".ScheduleBooking"
@@ -31,7 +33,7 @@
         <activity
             android:name=".MyProfile"
             android:label="@string/title_activity_my_profile"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SearchLocation"
             android:label="@string/title_activity_search_location"
