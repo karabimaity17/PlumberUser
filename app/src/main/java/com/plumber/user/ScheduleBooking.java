@@ -5,18 +5,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.weiwangcn.betterspinner.library.BetterSpinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.text.format.DateFormat;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -33,9 +37,14 @@ import devs.mulham.horizontalcalendar.utils.CalendarEventsPredicate;
 import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
 public class ScheduleBooking extends AppCompatActivity {
-    CardView btnBook,pick_time;
-    TextView month,time;
+    CardView btnBook, pick_time;
+    TextView month, time;
     private HorizontalCalendar horizontalCalendar;
+    BetterSpinner job_spinner;
+    private static final String[] COUNTRIES = new String[]{
+            "Leaky Pipes", "Running Toilet", "Water Heater Not Working", "Low Water Pressure", "Sewer Line Issues"
+    };
+    Typeface typeface;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,11 +53,13 @@ public class ScheduleBooking extends AppCompatActivity {
         setSupportActionBar(toolbar);
 //        getSupportActionBar().setDisplayShowHomeEnabled(true);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        btnBook=findViewById(R.id.btnBook);
-        month=findViewById(R.id.month);
-        pick_time=findViewById(R.id.pick_time);
-        time=findViewById(R.id.time);
+        typeface = ResourcesCompat.getFont(this, R.font.fonts_medium);
+        btnBook = findViewById(R.id.btnBook);
+        month = findViewById(R.id.month);
+        pick_time = findViewById(R.id.pick_time);
+        time = findViewById(R.id.time);
+        job_spinner = findViewById(R.id.job_type);
+        job_spinner .setTypeface(typeface);
         /* start 2 months ago from now */
 
         Calendar startDate = Calendar.getInstance();
@@ -58,7 +69,7 @@ public class ScheduleBooking extends AppCompatActivity {
         String month_name = month_date.format(startDate.getTime());
         int year = startDate.get(Calendar.YEAR);
 
-        month.setText(month_name+", "+String.valueOf(year));
+        month.setText(month_name + ", " + String.valueOf(year));
         /* end after 2 months from now */
         Calendar endDate = Calendar.getInstance();
         endDate.add(Calendar.MONTH, 200);
@@ -97,14 +108,14 @@ public class ScheduleBooking extends AppCompatActivity {
 //                })
                 .build();
 
-       // Log.i("Default Date", DateFormat.format("EEE, MMM d, yyyy", defaultSelectedDate).toString());
+        // Log.i("Default Date", DateFormat.format("EEE, MMM d, yyyy", defaultSelectedDate).toString());
 
         horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
             @Override
             public void onDateSelected(Calendar date, int position) {
                 String selectedDateStr = DateFormat.format("EEE, MMM d, yyyy", date).toString();
                 Toast.makeText(ScheduleBooking.this, selectedDateStr + " selected!", Toast.LENGTH_SHORT).show();
-             //   Log.i("onDateSelected", selectedDateStr + " - Position = " + position);
+                //   Log.i("onDateSelected", selectedDateStr + " - Position = " + position);
                 month.setText(DateFormat.format("MMM, yyyy", date));
             }
 
@@ -142,6 +153,12 @@ public class ScheduleBooking extends AppCompatActivity {
                 finish();
             }
         });
+        //spinner
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, COUNTRIES);
+        job_spinner.setAdapter(adapter);
+
+
     }
 
     @Override
