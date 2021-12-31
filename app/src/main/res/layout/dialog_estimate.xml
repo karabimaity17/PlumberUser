@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp"
+        android:background="@drawable/box"
+        android:layout_margin="@dimen/_8sdp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp"
+            android:text="Estimate Quotation"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"
+            android:fontFamily="@font/fonts_semibold"
+            android:background="@drawable/box"
+            android:layout_margin="@dimen/_3sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="@dimen/_15sdp"
+            android:visibility="visible"
+            android:text="Water Heater Not Working : $100/hr"
+            android:textStyle="bold"
+            android:fontFamily="@font/fonts_medium"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/colorBlack"/>
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Minimum Charges payable : $50"
+            android:visibility="visible"
+            android:fontFamily="@font/fonts_regular"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/colorDarkGrey"/>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginVertical="@dimen/_10sdp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_34sdp"
+                app:cardCornerRadius="@dimen/_17sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_gravity="right"
+                app:cardBackgroundColor="@color/colorGrey">
+                <TextView
+                    android:id="@+id/cancel"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_35sdp"
+
+                    android:gravity="center"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/fonts_medium"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Cancel"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_17sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_gravity="right">
+                <TextView
+                    android:id="@+id/add"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_35sdp"
+
+                    android:gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/fonts_medium"
+                    android:textSize="@dimen/_12sdp"
+                    android:background="@drawable/btn_background"
+                    android:text="Book"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="*Service charges may change"
+            android:visibility="visible"
+            android:fontFamily="@font/fonts_regular"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/cancel_color"/>
+    </LinearLayout>
+</LinearLayout>

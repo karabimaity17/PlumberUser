@@ -12,14 +12,17 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.weiwangcn.betterspinner.library.BetterSpinner;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.text.format.DateFormat;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -148,9 +151,34 @@ public class ScheduleBooking extends AppCompatActivity {
         btnBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ScheduleBooking.this,BookingSuccessful.class));
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                finish();
+                final AlertDialog.Builder builder = new AlertDialog.Builder(ScheduleBooking.this,R.style.CustomAlertDialog);
+                ViewGroup viewGroup = view.findViewById(android.R.id.content);
+                View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.dialog_estimate, viewGroup, false);
+                TextView cancel=dialogView.findViewById(R.id.cancel);
+                TextView add=dialogView.findViewById(R.id.add);
+                builder.setView(dialogView);
+                final AlertDialog alertDialog = builder.create();
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+
+                add.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(ScheduleBooking.this,BookingSuccessful.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        finish();
+                        alertDialog.dismiss();
+                    }
+
+
+
+                });
+                alertDialog.show();
+
             }
         });
         //spinner
