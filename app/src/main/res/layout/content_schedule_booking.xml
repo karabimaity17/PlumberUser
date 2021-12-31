@@ -289,7 +289,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Book Now"
+                    android:text="Continue"
                     android:textColor="@color/colorWhite"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
